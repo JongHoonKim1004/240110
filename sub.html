@@ -26,10 +26,69 @@
                 <ul>
                     <li><a href="#">NEW</a></li>
                     <li class="big-sub-menu"><a href="#">MAN</a>
-                        
+                        <ul class="big-sub-name-ul">
+                            <li><a href="#">OUTER</a>
+                                <ul class="clothes-sub-name">
+                                    <li><a href="#">DOWN</a></li>
+                                    <li><a href="#">JACKET</a></li>
+                                    <li><a href="#">VEST</a></li>
+                                    <li><a href="#">RAIN WEAR</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">TOP</a>
+                                <ul class="clothes-sub-name">
+                                    <li><a href="#">SHORT SLEEVE</a></li>
+                                    <li><a href="#">LONG SLEEVE</a></li>
+                                    <li><a href="#">SLEEVELESS</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">KNIT WEAR</a>
+                                <ul class="clothes-sub-name">
+                                    <li><a href="#">KNIT VEST</a></li>
+                                    <li><a href="#">KNIT WEAR</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">BOTTOM</a>
+                                <ul class="clothes-sub-name">
+                                    <li><a href="#">LONG PANTS</a></li>
+                                    <li><a href="#">SHORT PANTS</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </li>
+                    
                     <li class="big-sub-menu"><a href="#">WOMAN</a>
-                        
+                        <ul class="big-sub-name-ul">
+                            <li><a href="#">OUTER</a>
+                                <ul class="clothes-sub-name">
+                                    <li><a href="#">DOWN</a></li>
+                                    <li><a href="#">JACKET</a></li>
+                                    <li><a href="#">VEST</a></li>
+                                    <li><a href="#">RAIN WEAR</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">TOP</a>
+                                <ul class="clothes-sub-name">
+                                    <li><a href="#">SHORT SLEEVE</a></li>
+                                    <li><a href="#">LONG SLEEVE</a></li>
+                                    <li><a href="#">SLEEVELESS</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">KNIT WEAR</a>
+                                <ul class="clothes-sub-name">
+                                    <li><a href="#">KNIT VEST</a></li>
+                                    <li><a href="#">KNIT WEAR</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">BOTTOM</a>
+                                <ul class="clothes-sub-name">
+                                    <li><a href="#">LONG PANTS</a></li>
+                                    <li><a href="#">SHORT PANTS</a></li>
+                                    <li><a href="#">SKIRT</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">DRESS</a></li>
+                        </ul>
                     </li>
                     <li><a href="#">ONLINE ECXLUSIVE</a></li>
                     <li class="small-sub-menu"><a href="#">ACC</a>
@@ -369,10 +428,17 @@
 
         /* nav */
 
-        $("nav > ul > li").mouseover(function(){
-            $(this).children(".ul-sub-menu").stop().slideDown()
-        }).mouseout(function(){
-            $(".ul-sub-menu").stop().slideUp()
+        $(function(){
+            $("nav > ul > li").mouseover(function(){
+                $(this).children(".ul-sub-menu").stop().slideDown()
+            }).mouseout(function(){
+                $(".ul-sub-menu").stop().slideUp()
+            });
+            $(".big-sub-menu").mouseover(function(){
+                $(this).children(".big-sub-name-ul").stop().slideDown()
+            }).mouseout(function(){
+                $(".big-sub-name-ul").stop().slideUp()
+            });
         });
 
         /* thumbnail_navigation */
@@ -402,12 +468,19 @@
 
 
         /* amount-button */
-        $(function(){
-            $("#amount-button-plus").click(function(){
-                $("#amount-input").val(parseInt($(this).val())+1);
-                console.log();
-            });
-        });
+        var input =document.getElementById("amount-input");
+        
+        document.getElementById("amount-button-minus").onclick = function(){
+            input.value--;
+            if(input.value < 0){input.value = 0;}
+        }
+        document.getElementById("amount-button-plus").onclick = function(){
+            input.value++;
+            if(input.value > 99){
+                alert("더 이상 구매할 수 없습니다.");
+                input.value = 99;
+            }
+        }
 
         /* suggest-item */
         $(function(){

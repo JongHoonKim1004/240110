@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MARK & LONA</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/common copy.css">
-    <link rel="stylesheet" href="css/main copy.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/main.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
 </head>
 <body>
@@ -26,10 +26,69 @@
             <ul>
                 <li><a href="#">NEW</a></li>
                 <li class="big-sub-menu"><a href="#">MAN</a>
-                    
+                    <ul class="big-sub-name-ul">
+                        <li><a href="#">OUTER</a>
+                            <ul class="clothes-sub-name">
+                                <li><a href="#">DOWN</a></li>
+                                <li><a href="#">JACKET</a></li>
+                                <li><a href="#">VEST</a></li>
+                                <li><a href="#">RAIN WEAR</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">TOP</a>
+                            <ul class="clothes-sub-name">
+                                <li><a href="#">SHORT SLEEVE</a></li>
+                                <li><a href="#">LONG SLEEVE</a></li>
+                                <li><a href="#">SLEEVELESS</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">KNIT WEAR</a>
+                            <ul class="clothes-sub-name">
+                                <li><a href="#">KNIT VEST</a></li>
+                                <li><a href="#">KNIT WEAR</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">BOTTOM</a>
+                            <ul class="clothes-sub-name">
+                                <li><a href="#">LONG PANTS</a></li>
+                                <li><a href="#">SHORT PANTS</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
+                
                 <li class="big-sub-menu"><a href="#">WOMAN</a>
-                    
+                    <ul class="big-sub-name-ul">
+                        <li><a href="#">OUTER</a>
+                            <ul class="clothes-sub-name">
+                                <li><a href="#">DOWN</a></li>
+                                <li><a href="#">JACKET</a></li>
+                                <li><a href="#">VEST</a></li>
+                                <li><a href="#">RAIN WEAR</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">TOP</a>
+                            <ul class="clothes-sub-name">
+                                <li><a href="#">SHORT SLEEVE</a></li>
+                                <li><a href="#">LONG SLEEVE</a></li>
+                                <li><a href="#">SLEEVELESS</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">KNIT WEAR</a>
+                            <ul class="clothes-sub-name">
+                                <li><a href="#">KNIT VEST</a></li>
+                                <li><a href="#">KNIT WEAR</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">BOTTOM</a>
+                            <ul class="clothes-sub-name">
+                                <li><a href="#">LONG PANTS</a></li>
+                                <li><a href="#">SHORT PANTS</a></li>
+                                <li><a href="#">SKIRT</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">DRESS</a></li>
+                    </ul>
                 </li>
                 <li><a href="#">ONLINE ECXLUSIVE</a></li>
                 <li class="small-sub-menu"><a href="#">ACC</a>
@@ -229,11 +288,17 @@
         setInterval(announcement,5000);
 
         /* nav */
-
-        $("nav > ul > li").mouseover(function(){
-            $(this).children(".ul-sub-menu").stop().slideDown()
-        }).mouseout(function(){
-            $(".ul-sub-menu").stop().slideUp()
+        $(function(){
+            $("nav > ul > li").mouseover(function(){
+                $(this).children(".ul-sub-menu").stop().slideDown()
+            }).mouseout(function(){
+                $(".ul-sub-menu").stop().slideUp()
+            });
+            $(".big-sub-menu").mouseover(function(){
+                $(this).children(".big-sub-name-ul").stop().slideDown()
+            }).mouseout(function(){
+                $(".big-sub-name-ul").stop().slideUp()
+            });
         });
 
 
